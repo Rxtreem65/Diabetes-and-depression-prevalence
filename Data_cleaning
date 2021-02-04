@@ -19,10 +19,10 @@ table(data2015$SEX)
 nrow(data2015)
 
 #processing for ethnicity 
-table(data2015$X.RACE)
-data2015 = data2015[!is.na(data2015$X.RACE),]
-data2015 = subset(data2015, data2015$X.RACE<9)
-table(data2015$X.RACE)
+table(data2015$X.RACE.G1)
+data2015 = data2015[!is.na(data2015$X.RACE.G1),]
+data2015 = subset(data2015, data2015$X.RACE.G1<6)
+table(data2015$X.RACE.G1)
 nrow(data2015)
 
 #processing for BMI
@@ -98,7 +98,7 @@ nrow(data2015)
 table(data2015$X.AGEG5YR)
 table(data2015$DIABAGE2)
 table(data2015$SEX)
-table(data2015$X.RACE)
+table(data2015$X.RACE.G1)
 summary(data2015$X.BMI5)
 table(data2015$EXERANY2)
 table(data2015$INCOME2)
@@ -134,10 +134,10 @@ table(data2014$SEX)
 nrow(data2014)
 
 #processing for ethnicity 
-table(data2014$X.RACE)
-data2014 = data2014[!is.na(data2014$X.RACE),]
-data2014 = subset(data2014, data2014$X.RACE<9)
-table(data2014$X.RACE)
+table(data2014$X.RACE.G1)
+data2014 = data2014[!is.na(data2014$X.RACE.G1),]
+data2014 = subset(data2014, data2014$X.RACE.G1<6)
+table(data2014$X.RACE.G1)
 nrow(data2014)
 
 #processing for BMI
@@ -213,7 +213,7 @@ nrow(data2014)
 table(data2014$X.AGEG5YR)
 table(data2014$DIABAGE2)
 table(data2014$SEX)
-table(data2014$X.RACE)
+table(data2014$X.RACE.G1)
 summary(data2014$X.BMI5)
 table(data2014$EXERANY2)
 table(data2014$INCOME2)
@@ -249,10 +249,10 @@ table(data2013$SEX)
 nrow(data2013)
 
 #processing for ethnicity 
-table(data2013$X.RACE)
-data2013 = data2013[!is.na(data2013$X.RACE),]
-data2013 = subset(data2013, data2013$X.RACE<9)
-table(data2013$X.RACE)
+table(data2013$X.RACE.G1)
+data2013 = data2013[!is.na(data2013$X.RACE.G1),]
+data2013 = subset(data2013, data2013$X.RACE.G1<6)
+table(data2013$X.RACE.G1)
 nrow(data2013)
 
 #processing for BMI
@@ -328,7 +328,7 @@ nrow(data2013)
 table(data2013$X.AGEG5YR)
 table(data2013$DIABAGE2)
 table(data2013$SEX)
-table(data2013$X.RACE)
+table(data2013$X.RACE.G1)
 summary(data2013$X.BMI5)
 table(data2013$EXERANY2)
 table(data2013$INCOME2)
@@ -365,10 +365,10 @@ table(data2012$SEX)
 nrow(data2012)
 
 #processing for ethnicity 
-table(data2012$X.RACEGR2)
-data2012 = data2012[!is.na(data2012$X.RACEGR2),]
-data2012 = subset(data2012, data2012$X.RACEGR2<9)
-table(data2012$X.RACEGR2)
+table(data2012$X.RACE.G)
+data2012 = data2012[!is.na(data2012$X.RACE.G),]
+data2012 = subset(data2012, data2012$X.RACE.G<6)
+table(data2012$X.RACE.G)
 nrow(data2012)
 
 #processing for BMI
@@ -392,10 +392,10 @@ table(data2012$INCOME2)
 nrow(data2012)
 
 #processing for employment
-table(data2012$EMPLOY1)
-data2012 = data2012[!is.na(data2012$EMPLOY1),]
-data2012 = subset(data2012, data2012$EMPLOY1<9)
-table(data2012$EMPLOY1)
+table(data2012$EMPLOY)
+data2012 = data2012[!is.na(data2012$EMPLOY),]
+data2012 = subset(data2012, data2012$EMPLOY<9)
+table(data2012$EMPLOY)
 nrow(data2012)
 
 #processing for education 
@@ -444,11 +444,11 @@ nrow(data2012)
 table(data2012$X.AGEG5YR)
 table(data2012$DIABAGE2)
 table(data2012$SEX)
-table(data2012$X.RACE)
+table(data2012$X.RACE.G)
 summary(data2012$X.BMI5)
 table(data2012$EXERANY2)
 table(data2012$INCOME2)
-table(data2012$EMPLOY1)
+table(data2012$EMPLOY)
 table(data2012$EDUCA)
 table(data2012$SCNTMONY)
 table(data2012$SCNTMEAL)
