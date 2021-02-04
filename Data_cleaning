@@ -1,0 +1,457 @@
+library(SASxport)
+
+data2015 <- read.xport("C:/Users/riyap/Downloads/data/LLCP2015.XPT")
+nrow(data2015)
+
+#Processing Age group
+table(data2015$X.AGEG5YR)
+table(data2015$DIABAGE2)
+data2015 = data2015[!is.na(data2015$X.AGEG5YR),]
+data2015 = subset(data2015, data2015$X.AGEG5YR<14)
+data2015 = subset(data2015, data2015$DIABAGE2>29)
+table(data2015$X.AGEG5YR)
+nrow(data2015)
+
+#processing for gender
+table(data2015$SEX)
+data2015 = data2015[!is.na(data2015$SEX),]
+table(data2015$SEX)
+nrow(data2015)
+
+#processing for ethnicity 
+table(data2015$X.RACE)
+data2015 = data2015[!is.na(data2015$X.RACE),]
+data2015 = subset(data2015, data2015$X.RACE<9)
+table(data2015$X.RACE)
+nrow(data2015)
+
+#processing for BMI
+summary(data2015$X.BMI5)
+data2015 = data2015[!is.na(data2015$X.BMI5),]
+summary(data2015$X.BMI5)
+nrow(data2015)
+
+#processing for exercise
+table(data2015$EXERANY2)
+data2015 = data2015[!is.na(data2015$EXERANY2),]
+data2015 = subset(data2015, data2015$EXERANY2<7)
+table(data2015$EXERANY2)
+nrow(data2015)
+
+#processing for income
+table(data2015$INCOME2)
+data2015 = data2015[!is.na(data2015$INCOME2),]
+data2015 = subset(data2015, data2015$INCOME2<9)
+table(data2015$INCOME2)
+nrow(data2015)
+
+#processing for employment
+table(data2015$EMPLOY1)
+data2015 = data2015[!is.na(data2015$EMPLOY1),]
+data2015 = subset(data2015, data2015$EMPLOY1<9)
+table(data2015$EMPLOY1)
+nrow(data2015)
+
+#processing for education 
+table(data2015$EDUCA)
+data2015 = data2015[!is.na(data2015$EDUCA),]
+data2015 = subset(data2015, data2015$EDUCA<9)
+table(data2015$EDUCA)
+nrow(data2015)
+
+#processing  for worried about rent
+table(data2015$SCNTMNY1)
+data2015 = data2015[!is.na(data2015$SCNTMNY1),]
+data2015 = subset(data2015, data2015$SCNTMNY1<6)
+table(data2015$SCNTMNY1)
+nrow(data2015)
+
+#processing for worried about meal
+table(data2015$SCNTMEL1)
+data2015 = data2015[!is.na(data2015$SCNTMEL1),]
+data2015 = subset(data2015, data2015$SCNTMEL1<6)
+table(data2015$SCNTMEL1)
+nrow(data2015)
+
+#processing for home ownership
+table(data2015$RENTHOM1)
+data2015 = data2015[!is.na(data2015$RENTHOM1),]
+data2015 = subset(data2015, data2015$RENTHOM1<7)
+table(data2015$RENTHOM1)
+nrow(data2015)
+
+#processing for diabetes
+table(data2015$DIABETE3)
+data2015 = data2015[!is.na(data2015$DIABETE3),]
+data2015 = subset(data2015, data2015$DIABETE3<2)
+table(data2015$DIABETE3)
+nrow(data2015)
+
+#processing for depression
+table(data2015$ADDEPEV2)
+data2015 = data2015[!is.na(data2015$ADDEPEV2),]
+data2015 = subset(data2015, data2015$ADDEPEV2<7)
+table(data2015$ADDEPEV2)
+nrow(data2015)
+
+#Final data
+table(data2015$X.AGEG5YR)
+table(data2015$DIABAGE2)
+table(data2015$SEX)
+table(data2015$X.RACE)
+summary(data2015$X.BMI5)
+table(data2015$EXERANY2)
+table(data2015$INCOME2)
+table(data2015$EMPLOY1)
+table(data2015$EDUCA)
+table(data2015$SCNTMNY1)
+table(data2015$SCNTMEL1)
+table(data2015$RENTHOM1)
+table(data2015$DIABETE3)
+table(data2015$ADDEPEV2)
+
+
+
+
+
+
+##### year 2014 #####
+data2014 <- read.xport("C:/Users/riyap/Downloads/data/LLCP2014.XPT")
+nrow(data2014)
+
+#Processing Age group
+table(data2014$X.AGEG5YR)
+data2014 = data2014[!is.na(data2014$X.AGEG5YR),]
+data2014 = subset(data2014, data2014$X.AGEG5YR<14)
+data2014 = subset(data2014, data2014$DIABAGE2>29)
+table(data2014$X.AGEG5YR)
+nrow(data2014)
+
+#processing for gender
+table(data2014$SEX)
+data2014 = data2014[!is.na(data2015$SEX),]
+table(data2014$SEX)
+nrow(data2014)
+
+#processing for ethnicity 
+table(data2014$X.RACE)
+data2014 = data2014[!is.na(data2014$X.RACE),]
+data2014 = subset(data2014, data2014$X.RACE<9)
+table(data2014$X.RACE)
+nrow(data2014)
+
+#processing for BMI
+summary(data2014$X.BMI5)
+data2014 = data2014[!is.na(data2014$X.BMI5),]
+summary(data2014$X.BMI5)
+nrow(data2014)
+
+#processing for exercise
+table(data2014$EXERANY2)
+data2014 = data2014[!is.na(data2014$EXERANY2),]
+data2014 = subset(data2014, data2014$EXERANY2<7)
+table(data2014$EXERANY2)
+nrow(data2014)
+
+#processing for income
+table(data2014$INCOME2)
+data2014 = data2014[!is.na(data2014$INCOME2),]
+data2014 = subset(data2014, data2014$INCOME2<9)
+table(data2014$INCOME2)
+nrow(data2014)
+
+#processing for employment
+table(data2014$EMPLOY1)
+data2014 = data2014[!is.na(data2014$EMPLOY1),]
+data2014 = subset(data2014, data2014$EMPLOY1<9)
+table(data2014$EMPLOY1)
+nrow(data2014)
+
+#processing for education 
+table(data2014$EDUCA)
+data2014 = data2014[!is.na(data2014$EDUCA),]
+data2014 = subset(data2014, data2014$EDUCA<9)
+table(data2014$EDUCA)
+nrow(data2014)
+
+#processing  for worried about rent
+table(data2014$SCNTMNY1)
+data2014 = data2014[!is.na(data2014$SCNTMNY1),]
+data2014 = subset(data2014, data2014$SCNTMNY1<6)
+table(data2014$SCNTMNY1)
+nrow(data2014)
+
+#processing for worried about meal
+table(data2014$SCNTMEL1)
+data2014 = data2014[!is.na(data2014$SCNTMEL1),]
+data2014 = subset(data2014, data2014$SCNTMEL1<6)
+table(data2014$SCNTMEL1)
+nrow(data2014)
+
+#processing for home ownership
+table(data2014$RENTHOM1)
+data2014 = data2014[!is.na(data2014$RENTHOM1),]
+data2014 = subset(data2014, data2014$RENTHOM1<7)
+table(data2014$RENTHOM1)
+nrow(data2014)
+
+#processing for diabetes
+table(data2014$DIABETE3)
+data2014 = data2014[!is.na(data2014$DIABETE3),]
+data2014 = subset(data2014, data2014$DIABETE3<7)
+table(data2014$DIABETE3)
+nrow(data2014)
+
+#processing for depression
+table(data2014$ADDEPEV2)
+data2014 = data2014[!is.na(data2014$ADDEPEV2),]
+data2014 = subset(data2014, data2014$ADDEPEV2<7)
+table(data2014$ADDEPEV2)
+nrow(data2014)
+
+#Final data
+table(data2014$X.AGEG5YR)
+table(data2014$DIABAGE2)
+table(data2014$SEX)
+table(data2014$X.RACE)
+summary(data2014$X.BMI5)
+table(data2014$EXERANY2)
+table(data2014$INCOME2)
+table(data2014$EMPLOY1)
+table(data2014$EDUCA)
+table(data2014$SCNTMNY1)
+table(data2014$SCNTMEL1)
+table(data2014$RENTHOM1)
+table(data2014$DIABETE3)
+table(data2014$ADDEPEV2)
+
+
+
+
+
+### year 2013 ###
+data2013 <- read.xport("C:/Users/riyap/Downloads/data/LLCP2013.XPT")
+nrow(data2013)
+
+#Processing Age group
+table(data2013$X.AGEG5YR)
+table(data2013$DIABAGE2)
+data2013 = data2013[!is.na(data2013$X.AGEG5YR),]
+data2013 = subset(data2013, data2013$X.AGEG5YR<14)
+data2013 = subset(data2013, data2013$DIABAGE2>29)
+table(data2013$X.AGEG5YR)
+nrow(data2013)
+
+#processing for gender
+table(data2013$SEX)
+data2013 = data2013[!is.na(data2013$SEX),]
+table(data2013$SEX)
+nrow(data2013)
+
+#processing for ethnicity 
+table(data2013$X.RACE)
+data2013 = data2013[!is.na(data2013$X.RACE),]
+data2013 = subset(data2013, data2013$X.RACE<9)
+table(data2013$X.RACE)
+nrow(data2013)
+
+#processing for BMI
+summary(data2013$X.BMI5)
+data2013 = data2013[!is.na(data2013$X.BMI5),]
+summary(data2013$X.BMI5)
+nrow(data2013)
+
+#processing for exercise
+table(data2013$EXERANY2)
+data2013 = data2013[!is.na(data2013$EXERANY2),]
+data2013 = subset(data2013, data2013$EXERANY2<7)
+table(data2013$EXERANY2)
+nrow(data2013)
+
+#processing for income
+table(data2013$INCOME2)
+data2013 = data2013[!is.na(data2013$INCOME2),]
+data2013 = subset(data2013, data2013$INCOME2<9)
+table(data2013$INCOME2)
+nrow(data2013)
+
+#processing for employment
+table(data2013$EMPLOY1)
+data2013 = data2013[!is.na(data2013$EMPLOY1),]
+data2013 = subset(data2013, data2013$EMPLOY1<9)
+table(data2013$EMPLOY1)
+nrow(data2013)
+
+#processing for education 
+table(data2013$EDUCA)
+data2013 = data2013[!is.na(data2013$EDUCA),]
+data2013 = subset(data2013, data2013$EDUCA<9)
+table(data2013$EDUCA)
+nrow(data2013)
+
+#processing  for worried about rent
+table(data2013$SCNTMONY)
+data2013 = data2013[!is.na(data2013$SCNTMONY),]
+data2013 = subset(data2013, data2013$SCNTMONY<6)
+table(data2013$SCNTMONY)
+nrow(data2013)
+
+#processing for worried about meal
+table(data2013$SCNTMEAL)
+data2013 = data2013[!is.na(data2013$SCNTMEAL),]
+data2013 = subset(data2013, data2013$SCNTMEAL<6)
+table(data2013$SCNTMEAL)
+nrow(data2013)
+
+#processing for home ownership
+table(data2013$RENTHOM1)
+data2013 = data2013[!is.na(data2013$RENTHOM1),]
+data2013 = subset(data2013, data2013$RENTHOM1<7)
+table(data2013$RENTHOM1)
+nrow(data2013)
+
+#processing for diabetes
+table(data2013$DIABETE3)
+data2013 = data2013[!is.na(data2013$DIABETE3),]
+data2013 = subset(data2013, data2013$DIABETE3<2)
+table(data2013$DIABETE3)
+nrow(data2013)
+
+#processing for depression
+table(data2013$ADDEPEV2)
+data2013 = data2013[!is.na(data2013$ADDEPEV2),]
+data2013 = subset(data2013, data2013$ADDEPEV2<7)
+table(data2013$ADDEPEV2)
+nrow(data2013)
+
+#Final data
+table(data2013$X.AGEG5YR)
+table(data2013$DIABAGE2)
+table(data2013$SEX)
+table(data2013$X.RACE)
+summary(data2013$X.BMI5)
+table(data2013$EXERANY2)
+table(data2013$INCOME2)
+table(data2013$EMPLOY1)
+table(data2013$EDUCA)
+table(data2013$SCNTMONY)
+table(data2013$SCNTMEAL)
+table(data2013$RENTHOM1)
+table(data2013$DIABETE3)
+table(data2013$ADDEPEV2)
+
+
+
+
+
+
+
+data2012 <- read.xport("C:/Users/riyap/Downloads/data/LLCP2012.XPT")
+nrow(data2012)
+
+#Processing Age group
+table(data2012$X.AGEG5YR)
+table(data2012$DIABAGE2)
+data2012 = data2012[!is.na(data2012$X.AGEG5YR),]
+data2012 = subset(data2012, data2012$X.AGEG5YR<14)
+data2012 = subset(data2012, data2012$DIABAGE2>29)
+table(data2012$X.AGEG5YR)
+nrow(data2012)
+
+#processing for gender
+table(data2012$SEX)
+data2012 = data2012[!is.na(data2012$SEX),]
+table(data2012$SEX)
+nrow(data2012)
+
+#processing for ethnicity 
+table(data2012$X.RACEGR2)
+data2012 = data2012[!is.na(data2012$X.RACEGR2),]
+data2012 = subset(data2012, data2012$X.RACEGR2<9)
+table(data2012$X.RACEGR2)
+nrow(data2012)
+
+#processing for BMI
+summary(data2012$X.BMI5)
+data2012 = data2012[!is.na(data2012$X.BMI5),]
+summary(data2012$X.BMI5)
+nrow(data2012)
+
+#processing for exercise
+table(data2012$EXERANY2)
+data2012 = data2012[!is.na(data2012$EXERANY2),]
+data2012 = subset(data2012, data2012$EXERANY2<7)
+table(data2012$EXERANY2)
+nrow(data2012)
+
+#processing for income
+table(data2012$INCOME2)
+data2012 = data2012[!is.na(data2012$INCOME2),]
+data2012 = subset(data2012, data2012$INCOME2<9)
+table(data2012$INCOME2)
+nrow(data2012)
+
+#processing for employment
+table(data2012$EMPLOY1)
+data2012 = data2012[!is.na(data2012$EMPLOY1),]
+data2012 = subset(data2012, data2012$EMPLOY1<9)
+table(data2012$EMPLOY1)
+nrow(data2012)
+
+#processing for education 
+table(data2012$EDUCA)
+data2012 = data2015[!is.na(data2012$EDUCA),]
+data2012 = subset(data2012, data2012$EDUCA<9)
+table(data2012$EDUCA)
+nrow(data2012)
+
+#processing  for worried about rent
+table(data2012$SCNTMONY)
+data2012 = data2012[!is.na(data2012$SCNTMONY),]
+data2012 = subset(data2012, data2012$SCNTMONY<6)
+table(data2012$SCNTMONY)
+nrow(data2012)
+
+#processing for worried about meal
+table(data2012$SCNTMEAL)
+data2012 = data2012[!is.na(data2012$SCNTMEAL),]
+data2012 = subset(data2012, data2015$SCNTMEAL<6)
+table(data2012$SCNTMEAL)
+nrow(data2012)
+
+#processing for home ownership
+table(data2012$RENTHOM1)
+data2012 = data2015[!is.na(data2012$RENTHOM1),]
+data2012 = subset(data2012, data2012$RENTHOM1<7)
+table(data2012$RENTHOM1)
+nrow(data2012)
+
+#processing for diabetes
+table(data2012$DIABETE3)
+data2012 = data2012[!is.na(data2012$DIABETE3),]
+data2012 = subset(data2012, data2012$DIABETE3<2)
+table(data2012$DIABETE3)
+nrow(data2012)
+
+#processing for depression
+table(data2012$ADDEPEV2)
+data2012 = data2012[!is.na(data2012$ADDEPEV2),]
+data2012 = subset(data2012, data2012$ADDEPEV2<7)
+table(data2012$ADDEPEV2)
+nrow(data2012)
+
+#Final data
+table(data2012$X.AGEG5YR)
+table(data2012$DIABAGE2)
+table(data2012$SEX)
+table(data2012$X.RACE)
+summary(data2012$X.BMI5)
+table(data2012$EXERANY2)
+table(data2012$INCOME2)
+table(data2012$EMPLOY1)
+table(data2012$EDUCA)
+table(data2012$SCNTMONY)
+table(data2012$SCNTMEAL)
+table(data2012$RENTHOM1)
+table(data2012$DIABETE3)
+table(data2012$ADDEPEV2)
