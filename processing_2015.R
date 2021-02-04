@@ -1,6 +1,6 @@
 library(SASxport)
 
-data2015 <- read.xport("C:/Users/riyap/Downloads/data/LLCP2015.XPT")
+data2015 <- read.xport("LLCP2015.XPT")
 nrow(data2015)
 
 #Processing Age group
