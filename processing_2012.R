@@ -21,7 +21,7 @@ nrow(data2012)
 #processing for ethnicity 
 table(data2012$X.RACE.G)
 data2012 = data2012[!is.na(data2012$X.RACE.G),]
-data2012 = subset(data2012, data2012$X.RACE.G<9)
+data2012 = subset(data2012, data2012$X.RACE.G<6)
 table(data2012$X.RACE.G)
 nrow(data2012)
 
