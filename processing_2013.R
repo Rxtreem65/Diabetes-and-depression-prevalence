@@ -147,3 +147,19 @@ data2013 = data2013[!is.na(data2013$ADDEPEV2),] #removing missing values
 data2013 = subset(data2013, data2013$ADDEPEV2<7) #including depression yes or no
 table(data2013$ADDEPEV2)
 nrow(data2013)
+
+#Final data
+table(data2013$X.AGEG5YR)
+table(data2013$DIABAGE2)
+table(data2013$SEX)
+table(data2013$X.RACE)
+summary(data2013$X.BMI5)
+table(data2013$EXERANY2)
+table(data2013$INCOME2)
+table(data2013$EMPLOY)
+table(data2013$EDUCA)
+table(data2013$SCNTMONY)
+table(data2013$SCNTMEAL)
+table(data2013$RENTHOM1)
+table(data2013$DIABETE3)
+table(data2013$ADDEPEV2)

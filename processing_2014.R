@@ -1,15 +1,41 @@
 library(SASxport)
 
-data2014 <- read.xport("LLCP2014.XPT")
+data2014 <- read.xport("C:/Users/riyap/Downloads/data/LLCP2014.XPT")
+fea <- c("DIABAGE2","X.AGEG5YR","SEX","X.RACE.G1","X.BMI5","EXERANY2",
+         "MENTHLTH","INCOME2","EMPLOY1","EDUCA","SCNTMNY1","SCNTMEL1",
+         "RENTHOM1","DIABETE3","ADDEPEV2")
+data2014 <- data2014[fea]
 nrow(data2014)
+
+#processing for diabetes diagnosis age
+table(data2014$DIABAGE2)
+data2014 = data2014[!is.na(data2014$DIABAGE2),] #removing missing values
+hist(data2014$DIABAGE2, 
+     main = "Histogram of age at which diabetes diagnosed",
+     xlab = "Age at which respondent diagnoised with diabetes",
+     ylab = "number of respondents") #histogram plot for diagnosed age
+boxplot(data2014$DIABAGE2, main = "Boxplot of age at which diabetes diagnose")
+mean_dia = mean(data2014$DIABAGE2) #mean of diabetes age
+mean_dia
+std_dia = sd(data2014$DIABAGE2) #standard deviation of diabetes age
+std_dia
+mdl = mean_dia-1.96*std_dia #lower interval of CI
+mdh = mean_dia+1.96*std_dia #upper interval of CI
+mdl
+mdh
+#CI 95% subset
+data2014 = subset(data2014, data2014$DIABAGE2 >= 30) 
+data2014 = subset(data2014, data2014$DIABAGE2 <= mdh)
+table(data2014$DIABAGE2)
+nrow(data2014)
+
 
 #Processing Age group
 table(data2014$X.AGEG5YR)
 data2014 = data2014[!is.na(data2014$X.AGEG5YR),]
 data2014 = subset(data2014, data2014$X.AGEG5YR<14)
-data2014 = subset(data2014, data2014$DIABAGE2>29)
-table(data2014$X.AGEG5YR)
-nrow(data2014)
+
+
 
 #processing for gender
 table(data2014$SEX)
@@ -18,18 +44,34 @@ table(data2014$SEX)
 nrow(data2014)
 
 #processing for ethnicity 
-table(data2014$X.RACEGR3)
-data2014 = data2014[!is.na(data2014$X.RACEGR3),]
-data2014 = subset(data2014, data2014$X.RACEGR3<9)
-table(data2014$X.RACEGR3)
+table(data2014$X.RACE.G1)
+data2014 = data2014[!is.na(data2014$X.RACE.G1),]
+data2014 = subset(data2014, data2014$X.RACE.G1<9)
+table(data2014$X.RACE.G1)
 nrow(data2014)
 
 #processing for BMI
 summary(data2014$X.BMI5)
-data2014 = data2014[!is.na(data2014$X.BMI5),]
-data2014 = subset(data2014, data2014$X.BMI5<6000)
+data2014 = data2014[!is.na(data2014$X.BMI5),]#removing missing values
+hist(data2014$X.BMI5, main = "Histogram of BMI of respondents",
+     xlabe = "BMI",
+     ylabe = "number of respondents") #histogram plot for BMI
+boxplot(data2014$X.BMI5, main = "Boxplot of BMI")
+mean_b = mean(data2014$X.BMI5) #mean of bmi
+mean_b
+std_b = sd(data2014$X.BMI5) #standard deviation of bmi
+std_b
+mbl = mean_b-1.96*std_b #lower interval of CI
+mbh = mean_b+1.96*std_b #upper interval of CI
+mbl
+mbh
+#CI 95% subset
+data2014 = subset(data2014, data2014$X.BMI5 >= mbl) 
+data2014 = subset(data2014, data2014$X.BMI5 <= mbh)
+data2014$X.BMI5 = (data2014$X.BMI5)/100 #making BMI with 2 significant decimal
 summary(data2014$X.BMI5)
 nrow(data2014)
+
 
 #processing for exercise
 table(data2014$EXERANY2)

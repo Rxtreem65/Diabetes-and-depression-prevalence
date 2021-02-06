@@ -1,18 +1,10 @@
 #creating new variables SES and morbidity
 
-data2012$SES = data2012$INCOME2+(1/data2012$EMPLOY)+data2012$EDUCA
-              +data2012$SCNTMNY1+data2012$SCNTMEL1+(1/data2012$RENTHOM1)
+#SES variable
+#higher the value of SES better the social economic status
+total_data$SES = total_data$INCOME2+(1/total_data$EMPLOY1)+total_data$EDUCA
+              +total_data$SCNTMNY1+total_data$SCNTMEL1+(1/total_data$RENTHOM1)
+summary(total_data$SES)
 
-data2013$SES = data2013$INCOME2+(1/data2013$EMPLOY1)+data2013$EDUCA
-              +data2013$SCNTMONY+data2013$SCNTMEAL+(1/data2013$RENTHOM1)
-
-data2014$SES = data2014$INCOME2+(1/data2014$EMPLOY1)+data2014$EDUCA
-              +data2014$SCNTMNY1+data2014$SCNTMEL1+(1/data2014$RENTHOM1)
-
-data2015$SES = data2015$INCOME2+(1/data2015$EMPLOY1)+data2015$EDUCA
-              +data2015$SCNTMNY1+data2015$SCNTMEL1+(1/data2015$RENTHOM1)
-
-data2012$MORB = data2012$ADDEPEV2
-data2013$MORB = data2013$ADDEPEV2
-data2014$MORB = data2014$ADDEPEV2
-data2015$MORB = data2015$ADDEPEV2
+#binomial value for morbidity (0)absent (1)present
+total_data$MORB = 2 - total_data$ADDEPEV2 
