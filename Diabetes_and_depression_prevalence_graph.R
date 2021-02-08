@@ -61,3 +61,37 @@ legend("topleft",
        fill = c("black"),
 )
 
+
+#plotting modbidity across gender
+mydata$MORB = 0
+mydata$MORB[mydata$DIABETE3==1] <- 1
+mydata$MORB[mydata$ADDEPEV2==1] <- 2
+mydata$MORB[mydata$DIABETE3==1 & mydata$ADDEPEV2==1] <- 3
+table(mydata$MORB)
+barplot(mydata$MORB)
+
+mydata = subset(mydata,mydata$MORB!=0)
+table(mydata$MORB)
+
+table(mydata$MORB,mydata$SEX)
+
+
+#DISTRIBUTION OF MALE AND FEMALE IN EACH AGE CATEGORIES
+t = table(mydata$SEX,mydata$MORB)
+t = round(prop.table(t)*100,2)
+t
+colnames(t) = c("Diabetic","depressed","Depressed and Diabetic")
+barplot(t,
+        main="Gender distribution of respondents",
+        #xlab = "age group",
+        col=c("red","blue"),
+        beside = TRUE,
+        ylab="Percentage of respondents"
+)
+legend("topleft",
+       c("Male","Female"),
+       fill = c("red","blue"),
+)
+
+
+
