@@ -1,0 +1,71 @@
+library(oddsratio)
+#creating model
+
+class(total_data$X.AGEG5YR)
+class(total_data$SEX)
+class(total_data$X.RACE.G1)
+class(total_data$X.BMI5)
+class(total_data$EXERANY2)
+class(total_data$MENTHLTH)
+class(total_data$SES)
+
+tot_da=total_data
+total_data$EXERANY2[total_data$EXERANY2==2] <- 0
+
+#MODEL
+MORB.total_data = glm(formula = MORB ~ X.AGEG5YR + as.factor(SEX)
+                + as.factor(X.RACE.G1) + X.BMI5 + as.factor(EXERANY2) + MENTHLTH
+                + SES , 
+                family = binomial,
+                data = total_data, )
+summary(MORB.total_data)
+confint(MORB.total_data)
+
+table(total_data$X.RACE.G1)
+table(total_data$EXERANY2)
+
+MORB_2.total_data = glm(formula = MORB ~ X.AGEG5YR + as.factor(SEX)
+                      + as.factor(X.RACE.G1) + X.BMI5 + as.factor(EXERANY2) + MENTHLTH
+                      + as.factor(SES_category) , 
+                      family = binomial,
+                      data = total_data, )
+summary(MORB_2.total_data)
+confint(MORB_2.total_data)
+
+MORB_3.total_data = glm(formula = MORB_3 ~ X.AGEG5YR + as.factor(SEX)
+                        + as.factor(X.RACE.G1) + X.BMI5 + as.factor(EXERANY2) 
+                        + SES + DURATION, 
+                        family = binomial,
+                        data = total_data, )
+summary(MORB_3.total_data)
+exp(coef(MORB_3.total_data))
+
+exp(summary(MORB_3.total_data))
+exp(confint(MORB_3.total_data))
+
+MORB_4.total_data = glm(formula = MORB_3 ~ X.AGEG5YR + as.factor(SEX)
+                        + as.factor(X.RACE.G1) + X.BMI5 + as.factor(EXERANY2) 
+                        + as.factor(SES_category)+ DURATION , 
+                        family = binomial,
+                        data = total_data, )
+summary(MORB_4.total_data)
+exp(coef(MORB_4.total_data))
+exp(confint(MORB_4.total_data))
+
+SES.total_data = lm(formula = SES ~ INCOME2 + EMPLOY1 + EDUCA 
+                     + SCNTMNY1 + SCNTMEL1 + RENTHOM1 ,
+                     data = total_data)
+summary(SES.total_data)
+
+SES_2.total_data = lm(formula = SES ~ INCOME2 + EDUCA,
+                    data = total_data)
+summary(SES_2.total_data)
+
+
+MORB_5.total_data = glm(formula = MORB_3 ~ X.AGEG5YR + as.factor(SEX)
+                        + as.factor(X.RACE.G1) + X.BMI5 + as.factor(EXERANY2) 
+                        + DURATION, 
+                        family = binomial,
+                        data = total_data, )
+summary(MORB_5.total_data)
+exp(coef(MORB_5.total_data))
