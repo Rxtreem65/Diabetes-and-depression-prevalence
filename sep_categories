@@ -1,0 +1,11 @@
+total_data$SES_category = 0
+total_data$SES_category[total_data$SES <= 6] = 1
+total_data$SES_category[total_data$SES > 6 & total_data$SES<= 10] = 2
+total_data$SES_category[total_data$SES >10] = 3
+table(total_data$SES_category)
+
+total_data$SES_category = 0
+total_data$SES_category[total_data$SES <= 10] = 1
+total_data$SES_category[total_data$SES > 10 & total_data$SES<= 16] = 2
+total_data$SES_category[total_data$SES >16] = 3
+table(total_data$SES_category)
