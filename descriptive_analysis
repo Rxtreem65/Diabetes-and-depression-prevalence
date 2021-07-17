@@ -1,0 +1,32 @@
+library(DescTools)
+MeanCI(mtp_total_data$X.AGEG5YR)
+MeanCI(mtp_total_data$X.BMI5)
+MeanCI(mtp_total_data$MENTHLTH)
+MeanCI(mtp_total_data$SES)
+
+t = table(mtp_total_data$MORB,mtp_total_data$SEX)
+t
+prop.table(t, margin = 2)
+t = table(mtp_total_data$MORB,mtp_total_data$X.RACE.G1)
+t
+prop.table(t, margin = 2)
+t = table(mtp_total_data$MORB,mtp_total_data$EXERANY2)
+t
+prop.table(t, margin = 2)
+t = table(mtp_total_data$MORB,mtp_total_data$SES_category)
+t
+prop.table(t, margin = 2)
+
+
+
+res <- prop.test(x = c(1426, 2621), n = c(7196, 8401))
+# Printing the results
+res 
+res <- prop.test(x = c(1079, 1133), n = c(9827, 5822), alternative = "less")
+res
+res <- prop.test(x = c(1079, 1133), n = c(9827, 5822), alternative = "greater")
+res
+
+res <- prop.test(x = c(2222,1825 ), n = c(9800, 5797))
+# Printing the results
+res 
